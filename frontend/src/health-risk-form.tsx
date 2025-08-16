@@ -45,7 +45,7 @@ export default function HealthRiskForm() {
     BP_Systolic: 120,
     BP_Diastolic: 80,
     FastingGlucose: 90,
-    Cholesterol: 180,
+    Cholesterol: 100,
   });
 
   const validateForm = (): boolean => {
@@ -127,7 +127,7 @@ export default function HealthRiskForm() {
     try {
       const submitData = {
         ...formData,
-        ExistingConditions: formData.ExistingConditions || undefined,
+        ExistingConditions: formData.ExistingConditions || null,
       };
 
       const res = await fetch("http://127.0.0.1:8000/predict", {
